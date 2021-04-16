@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+
+    <div class="row" style="margin-top: 40px">
+        <div class="alert alert-primary text-center" role="alert">
+            淘宝图书打印计算器
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 40px">
+        <select id="selector" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <option selected disabled = disabled>请输入你想打印多少本书</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+        </select>
+    </div>
+    <div class="row" style="margin-top: 40px">
+        <div class="input-group" hidden =hidden id="input-group">
+            <h3>ffff</h3>
+
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#selector").change(function(){
+            var num = $("#selector").val()
+            // alert(1)
+            $("#input-group").append('<h1>test </h1>')
+            $('input-group').removeAttr('hidden')
+        });
+
+    });
+
+
+</script>
+</body>
+</html>
