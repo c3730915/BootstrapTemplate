@@ -7,7 +7,7 @@
     <link href="css/bootstrap.css" rel="stylesheet">
 </head>
 <body>
-<div class="container">
+<div class="container" style="width: 60%">
 
     <div class="row" style="margin-top: 40px">
         <div class="alert alert-primary text-center" role="alert">
@@ -27,22 +27,29 @@
             <option value="7">7</option>
         </select>
     </div>
-    <div class="row" style="margin-top: 40px">
-        <div class="input-group" hidden =hidden id="input-group">
-            <h3>ffff</h3>
-
+    <div class="row input-form" style="margin-top: 40px" id="parent">
+        <div class="input-group"  id="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">第本书的页数</span>
+                <input type="text" class="form-control" placeholder="Pages" aria-describedby="basic-addon1">
+            </div>
         </div>
+
 
     </div>
 </div>
 <script type="text/javascript" src="js/jquery-3.6.0.js"></script>
 <script type="text/javascript">
     $(function () {
-        $("#selector").change(function(){
+        $("#selector").change(function(e){
+            $('.cloned').remove()
             var num = $("#selector").val()
-            // alert(1)
-            $("#input-group").append('<h1>test </h1>')
-            $('input-group').removeAttr('hidden')
+            var id=0;
+            for (var i=0;i<num-1;i++){
+                $('#input-group').clone().attr('id',id+=1).attr('class','cloned').appendTo('.input-form')
+                // addClass('cloned')
+            }
+            $('#parent').removeAttr('hidden')
         });
 
     });
