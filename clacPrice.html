@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淘宝图书打印计算器</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--    适配手机-->
+</head>
+<body>
+<div class="container" style="width: 60%">
+
+    <div class="row" style="margin-top: 40px">
+        <div class="alert alert-primary text-center" role="alert">
+            淘宝图书打印计算器
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 40px">
+        <select id="selector" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <option selected disabled = disabled>请输入你想打印多少本书</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+    </div>
+    <div class="row input-form" style="margin-top: 40px" id="parent">
+        <div class="input-group"  id="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">第本书的页数</span>
+                <input type="text" class="form-control" placeholder="Pages" aria-describedby="basic-addon1">
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#selector").change(function(e){
+            $('.cloned').remove()
+            var num = $("#selector").val()
+            var id=0;
+            for (var i=0;i<num-1;i++){
+                $('#input-group').clone().attr('id',id+=1).attr('class','cloned').appendTo('.input-form')
+                // addClass('cloned')
+            }
+            $('#parent').removeAttr('hidden')
+        });
+
+    });
+
+
+</script>
+</body>
+</html>
